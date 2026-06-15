@@ -238,6 +238,57 @@ section { position: relative; overflow: hidden; }
 
 .mem-frame { flex-shrink:0;width:270px;height:1000px;border-radius:12px;overflow:hidden;position:relative; }
 .mem-img { width:100%;height:100%;border-radius:12px;display:flex;align-items:center;justify-content:center;transition:transform var(--ease); }
+/* Mobile fix for memory cards */
+@media (max-width: 768px) {
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .mem-card {
+    flex-direction: column !important;
+    width: 92vw !important;
+    align-items: center;
+  }
+
+  /* Override both left and right variants */
+  .mem-card.mem-right {
+    flex-direction: column !important;
+  }
+
+  .mem-frame {
+    width: 92vw !important;
+    height: auto !important;
+    aspect-ratio: 3 / 4;
+    border-radius: 12px;
+  }
+
+  .mem-frame .mem-img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .mem-frame .mem-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .mem-body {
+    width: 92vw;
+    text-align: center;
+  }
+
+  /* Hide timeline dot line on mobile */
+  .mem-dot,
+  .mem-dot-right {
+    display: none;
+  }
+}
 .mem-card:hover .mem-img { transform:scale(1.04); }
 .img1 { background:linear-gradient(135deg,#ffb3c6,#ff9a6c,#ffd4e8); }
 .img2 { background:linear-gradient(135deg,#2d1f5a,#7b5ea7,#c4b5d8); }
