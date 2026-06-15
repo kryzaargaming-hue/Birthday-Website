@@ -653,7 +653,7 @@ function initFireflies() {
   const btn = qs("#music-btn");
   if (!btn) return;
 
-  const audio = new Audio("music.mp3");
+  const audio = new Audio("music1.mp3");
   audio.loop = true;
   audio.volume = 0.3;
 
